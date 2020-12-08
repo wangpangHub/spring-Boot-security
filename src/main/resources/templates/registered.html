@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <style>
+        body{ text-align:center}
+        .divcss5{margin:0 auto;width:300px;height:100px}
+    </style>
+</head>
+<body style="content: none">
+<form class="form-horizontal" action="" method="post">
+    <div class="container">
+        <div class="row-cols-2 divcss5">
+            <div class="col">
+                <div class="form-group">
+                    <span> 用 户 名：<input name="userName" type="text" class="form-control" placeholder="输 入 用 户 名"></span>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row-cols-2 divcss5" >
+            <div class="col" >
+                <div class="form-group" >
+                    登 录 名: <input name="loginName" type="text" class="form-control" value="" placeholder="输 入 登 录 名"/>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row-cols-2 divcss5">
+            <div class="col">
+                <div class="form-group">
+                    密 码:<input name="password" type="password" class="form-control" value="" placeholder="请 输 入 密  码"/>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row-cols-2 divcss5">
+            <div class="col">
+                <div class="form-group">
+                    确 认 密 码:<input name="password" type="password" class="form-control" value="" placeholder="请 确 认 密  码"/>
+                </div>
+            </div>
+        </div>
+        <div class="row-cols-2 divcss5">
+            <div class="col">
+                <div class="form-group">
+                    验证码:<img src="/unregistered/getRandoImg"/>
+                </div>
+            </div>
+        </div>
+        <div class="row-cols-2">
+            <input type="button" class="btn btn-primary" value="返 回" onclick="javaScript:history.go(-1)" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="btn btn btn-success" value="注 册" />
+        </div>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+server:
+  # 端口
+  port: 8122
+  # servlet 路径
+  servlet:
+    context-path: /
+    # 配置数据源
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  #  配置静态资源访问路径
+  resources:
+    static-locations: classpath:/static/
+  datasource:
+    username: maintain
+    password: CaEOgCfIIwB1do9YJYOZzscNO2b6aI
+    url: jdbc:mysql://rm-8vblw3rx0301270x1eo.mysql.zhangbei.rds.aliyuncs.com:3306/street_stall?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  # 配置映射路径
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+    cache: false
+mybatis:
+#  mapper映射的xml文件
+  mapper-locations: classpath:mapping/*Mapping.xml
+#  设置mybatis的别名,这里写的是你包的路径
+  type-aliases-package: com.springboot.wangpan.entity
+
