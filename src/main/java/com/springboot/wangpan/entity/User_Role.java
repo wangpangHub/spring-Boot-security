@@ -1,17 +1,24 @@
 package com.springboot.wangpan.entity;
 
+import java.io.Serializable;
+
 /**
  * @author homolo
  * @version 1.0
  * @date 20-8-25 上午9:58
  */
-public class User_Role {
+public class User_Role implements Serializable {
+	public User_Role() {
+
+	}
+
 	//id
 	private Integer id;
 	//所属用户id
 	private Integer user_id;
 	//所属角色id
 	private Integer role_id;
+
 
 	public Integer getId() {
 		return id;

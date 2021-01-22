@@ -1,11 +1,13 @@
 package com.springboot.wangpan.entity;
 
+import java.io.Serializable;
+
 /**
  * @author homolo
  * @version 1.0
  * @date 20-8-25 上午9:53
  */
-public class Role {
+public class Role implements Serializable {
 	//角色id
 	private Integer id;
 	//角色名称
@@ -36,5 +38,10 @@ public class Role {
 	public void setRoleRemark(String roleRemark) {
 		this.roleRemark = roleRemark;
 	}
+
+	public Role() {
+
+	}
+
 
 }

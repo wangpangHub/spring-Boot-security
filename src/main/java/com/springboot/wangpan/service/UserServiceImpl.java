@@ -12,6 +12,7 @@ import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
+
 	@Autowired
 	UserMapper userMapper;
 

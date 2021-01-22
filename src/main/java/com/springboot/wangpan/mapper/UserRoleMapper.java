@@ -1,14 +1,14 @@
 package com.springboot.wangpan.mapper;
 
-import com.springboot.wangpan.entity.User;
+import com.springboot.wangpan.entity.User_Role;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Mapper
 @Repository
-public interface UserMapper {
-	int insetUser(User user);
+public interface UserRoleMapper {
 
-	User getLoginIdSearchUser(String loginId);
-
+	List<User_Role> getUserRoles(Integer userId);
 }

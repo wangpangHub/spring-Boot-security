@@ -12,9 +12,14 @@ public class PageController {
 		return "registered";
 	}
 
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/login.html")
 	public String loginPage() {
 		return "login";
+	}
+
+	@RequestMapping("/user/index.html")
+	public String indexPage() {
+		return "index";
 	}
 
 }

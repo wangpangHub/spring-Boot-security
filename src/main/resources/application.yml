@@ -26,13 +26,15 @@ spring:
       ddl-auto: update
   # 配置映射路径
   thymeleaf:
+    #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+    mode: HTML5
     prefix: classpath:/templates/
     suffix: .html
     encoding: utf-8
     cache: false
 mybatis:
-#  mapper映射的xml文件
+  #  mapper映射的xml文件
   mapper-locations: classpath:mapping/*Mapping.xml
-#  设置mybatis的别名,这里写的是你包的路径
+  #  设置mybatis的别名,这里写的是你包的路径
   type-aliases-package: com.springboot.wangpan.entity
 

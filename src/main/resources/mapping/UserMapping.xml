@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.springboot.wangpan.mapper.UserMapper">
+
     <insert id="insetUser" parameterType="User">
       insert into user (loginName,`password`,userName,userId,createTime) values(#{loginName},#{password},#{userName},#{userId},#{createTime});
     </insert>
 
-    <resultMap id="UserMap" type="com.springboot.wangpan.entity.User">
-        <result property="id" column="id"/>
+    <resultMap id="userEntity" type="com.springboot.wangpan.entity.User">
+        <id property="id" column="id"/>
         <result property="userName" column="userName"/>
         <result property="loginName" column="loginName"/>
+        <result property="passWord" column="passWord"/>
         <result property="userId" column="userId"/>
         <result property="createTime" column="createTime"/>
         <result property="role" column="role"/>
         <result property="loginId" column="loginId"/>
+        <collection property="userRoleList" javaType="java.util.ArrayList"
+                    ofType="com.springboot.wangpan.entity.Role">
+            <id property="id" column="role_id"/>
+            <result property="roleName" column="roleName"/>
+            <result property="roleRemark" column="roleRemark"/>
+        </collection>
     </resultMap>
-    <select id="getLoginIdSearchUser" parameterType="String" resultMap="UserMap">
-        select  * from  `user`  where `loginName` = #{loginId}
+    <select id="getLoginIdSearchUser" parameterType="String" resultMap="userEntity">
+  SELECT u.*,r.id AS role_id,r.roleName,r.roleRemark FROM	`user` AS u LEFT JOIN user_role AS ur ON u.id=ur.user_id LEFT JOIN  role as r ON ur.role_id=r.id  WHERE u.loginName=#{loginName}
     </select>
+
 </mapper>
