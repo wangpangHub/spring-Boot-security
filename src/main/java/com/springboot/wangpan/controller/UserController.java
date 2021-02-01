@@ -1,14 +1,14 @@
 package com.springboot.wangpan.controller;
 
-import com.springboot.wangpan.entity.User;
 import com.springboot.wangpan.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 @RestController
@@ -26,15 +26,8 @@ public class UserController {
 	 */
 	@RequestMapping("/unregistered/searchUser")
 	public ModelAndView userLogin(HttpServletRequest httpServletRequest) {
-		HttpSession session = httpServletRequest.getSession();
-		User userEntity = (User) session.getAttribute("user");
-		ModelAndView modelAndView = new ModelAndView();
-		if (userEntity == null) {
-			modelAndView.setViewName("login");
-			return modelAndView;
-		}
-		modelAndView.setViewName("index");
-		return modelAndView;
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		return null;
 	}
 
 	@RequestMapping("/createUser")
